@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management App</title>
+
+    <!-- CSS File -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>User Management System</h1>
+
+      <!-- User Form -->
+      <div class="form-box">
+        <form action="/add" method="POST">
+          <input type="text" name="name" placeholder="Enter Name" required />
+
+          <input type="email" name="email" placeholder="Enter Email" required />
+
+          <input type="number" name="age" placeholder="Enter Age" required />
+
+          <button type="submit">Add User</button>
+        </form>
+      </div>
+
+      <!-- User Table -->
+      <div class="table-box">
+        <h2>All Users</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.age }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
