@@ -4,34 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Management App</title>
-
-    <!-- CSS File -->
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   </head>
   <body>
     <div class="container">
       <h1>User Management System</h1>
+      <p class="subtitle">Manage your contacts with a cleaner, more reliable experience.</p>
 
-      <!-- User Form -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-group">
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
       <div class="form-box">
-        <form action="/add" method="POST">
+        <form action="{{ url_for('add_user') }}" method="POST">
           <input type="text" name="name" placeholder="Enter Name" required />
-
           <input type="email" name="email" placeholder="Enter Email" required />
-
-          <input type="number" name="age" placeholder="Enter Age" required />
-
+          <input type="number" name="age" placeholder="Enter Age" min="1" max="120" required />
           <button type="submit">Add User</button>
         </form>
       </div>
 
-      <!-- User Table -->
       <div class="table-box">
         <h2>All Users</h2>
-
+        {% if users %}
         <table>
           <thead>
             <tr>
@@ -39,9 +40,9 @@
               <th>Name</th>
               <th>Email</th>
               <th>Age</th>
+              <th>Action</th>
             </tr>
           </thead>
-
           <tbody>
             {% for user in users %}
             <tr>
@@ -49,10 +50,18 @@
               <td>{{ user.name }}</td>
               <td>{{ user.email }}</td>
               <td>{{ user.age }}</td>
+              <td>
+                <form action="{{ url_for('delete_user', user_id=user.id) }}" method="POST" class="inline-form">
+                  <button type="submit" class="delete-btn">Delete</button>
+                </form>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
+        {% else %}
+        <p class="empty-state">No users yet. Add one above to get started.</p>
+        {% endif %}
       </div>
     </div>
   </body>
