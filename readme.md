@@ -3,7 +3,7 @@
 - **Name:** User Management (Flask example)
 - **Description:** Small Flask-based user management example with templates and static assets. Ready for local development and testing.
 
-**Requirements**
+**Requirements
 
 - **Python:** 3.8+
 - **Python packages:** Flask (install with `pip install Flask`) or `pip install -r requirements.txt` if a `requirements.txt` is provided.
