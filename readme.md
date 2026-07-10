@@ -1,4 +1,4 @@
-**Project**--
+**Project**
 
 - **Name:** User Management (Flask example)
 - **Description:** Small Flask-based user management example with templates and static assets. Ready for local development and testing.
