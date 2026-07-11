@@ -14,7 +14,7 @@
 - **Activate (PowerShell):** `.venv\Scripts\Activate.ps1`
 - **Install deps:** `pip install -r requirements.txt` or `pip install Flask`
 
-**Run**
+**Run
 
 - **Direct:** `python app.py`
 - **Flask CLI (Windows PowerShell):**
