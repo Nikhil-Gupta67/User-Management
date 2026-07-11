@@ -8,7 +8,7 @@
 - **Python:** 3.8+
 - **Python packages:** Flask (install with `pip install Flask`) or `pip install -r requirements.txt` if a `requirements.txt` is provided.
 
-**Setup**
+**Setup
 
 - **Create venv:** `python -m venv .venv`
 - **Activate (PowerShell):** `.venv\Scripts\Activate.ps1`
