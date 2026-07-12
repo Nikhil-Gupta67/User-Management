@@ -25,7 +25,7 @@
 
 - **Run tests:** `pytest`
 
-**Project Structure**
+**Project Structure
 
 - **Entry point:** [app.py](app.py)
 - **Tests:** [test_app.py](test_app.py)
