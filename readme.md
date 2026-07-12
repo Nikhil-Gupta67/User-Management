@@ -21,7 +21,7 @@
   - `$env:FLASK_APP = "app.py"`
   - `flask run`
 
-**Testing**
+**Testing
 
 - **Run tests:** `pytest`
 
