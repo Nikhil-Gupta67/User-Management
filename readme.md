@@ -33,7 +33,7 @@
 - **Templates:** [templates](templates)
 - **Static files:** [static/style.css](static/style.css)
 
-**Notes**
+**Notes
 
 - The app uses the `instance/` folder for runtime configuration.
 - Edit templates in the `templates` directory and styles in `static/style.css`.
