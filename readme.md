@@ -5,7 +5,7 @@
 
 **Requirements
 
-- **Python: 3
+- **Python: 
 - **Python packages:** Flask (install with `pip install Flask`) or `pip install -r requirements.txt` if a `requirements.txt` is provided.
 
 **Setup
