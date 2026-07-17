@@ -1,40 +1,77 @@
-**Project
+# User Management (Flask example)
 
-- **Name:** User Management (Flask example)
-- **Description:** Small Flask-based user management example with templates and static assets. Ready for local development and testing.
+A minimal Flask-based user management example with templates and static assets. Designed for local development and simple testing.
 
-**Requirements
+## Features
 
-- **Python
-- **Python packages:** Flask (install with `pip install Flask`) or `pip install -r requirements.txt` if a `requirements.txt` is provided.
+- Minimal user management routes and templates
+- Example test using `pytest`
+- Uses `instance/` for runtime configuration
 
-**Setup
+## Prerequisites
 
-- **Create venv:** `python -m venv .venv`
-- **Activate (PowerShell):** `.venv\Scripts\Activate.ps1`
-- **Install deps:** `pip install -r requirements.txt` or `pip install Flask`
+- Python 3.8 or newer
+- (Optional) Git
 
-**Run
+## Quick Setup
 
-- **Direct:** `python app.py`
-- **Flask CLI (Windows PowerShell):**
-  - `$env:FLASK_APP = "app.py"`
-  - `flask run`
+1. Create a virtual environment:
 
-**Testing
+```powershell
+python -m venv .venv
+```
 
-- **Run tests:** `pytest`
+2. Activate the virtual environment (PowerShell):
 
-**Project Structure
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-- **Entry point:** [app.py](app.py)
-- **Tests:** [test_app.py](test_app.py)
-- **Instance folder (config):** [instance](instance)
-- **Templates:** [templates](templates)
-- **Static files:** [static/style.css](static/style.css)
+3. Install dependencies:
 
-**Notes
+```powershell
+pip install -r requirements.txt  # if provided
+pip install Flask                # otherwise
+```
 
-- The app uses the `instance/` folder for runtime configuration.
-- Edit templates in the `templates` directory and styles in `static/style.css`.
-- If you want, I can add a `requirements.txt` and a brief `README` run example for Docker.
+## Run
+
+Start the app directly:
+
+```powershell
+python app.py
+```
+
+Or use the Flask CLI (PowerShell):
+
+```powershell
+$env:FLASK_APP = "app.py"
+flask run
+```
+
+Open http://127.0.0.1:5000 in your browser.
+
+## Tests
+
+Run the test suite with:
+
+```powershell
+pytest
+```
+
+## Project Structure
+
+- `app.py` — application entrypoint
+- `test_app.py` — tests
+- `instance/` — runtime configuration
+- `templates/` — Jinja2 templates
+- `static/style.css` — styles
+
+## Notes & Next Steps
+
+- Add a `requirements.txt` to pin dependencies (I can create one).
+- I can also add Docker support or CI configuration on request.
+
+---
+
+Updated README — concise setup, run, and test instructions.
